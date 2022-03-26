@@ -181,23 +181,37 @@ class _AddproductState extends State<Addproduct> {
                   onPressed: () async{
 
 
-                    FirebaseFirestore.instance
-                        .collection('Productdetails')
-                        .add({
-                      'description': prodsec.text,
-                      'price': prodprice.text,
-                      'productname': prodtname.text,
-                      'size': prodsize.text,},);
+                    if(prodtname.text == "" || prodsize.text == "" || prodsec.text =="" || prodprice.text == ""){
 
 
-                    CoolAlert.show(
-                      context: context,
-                      type: CoolAlertType.success,
-                      text: "Your Product Added successful!",
-                      onConfirmBtnTap: (){
-                        Navigator.pushNamed(context, "home_screen");
-                      }
-                    );
+                      final snackBar = SnackBar(
+                        backgroundColor: Colors.red[900],
+                        content: Text("Please Enter All the Details" + " !!!",style: TextStyle(color: Colors.yellowAccent),textAlign: TextAlign.center),
+                      );
+
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                    }else{
+
+                      FirebaseFirestore.instance
+                          .collection('Productdetails')
+                          .add({
+                        'description': prodsec.text,
+                        'price': prodprice.text,
+                        'productname': prodtname.text,
+                        'size': prodsize.text,},);
+
+
+                      CoolAlert.show(
+                          context: context,
+                          type: CoolAlertType.success,
+                          text: "Your Product Added successful!",
+                          onConfirmBtnTap: (){
+                            Navigator.pushNamed(context, "home_screen");
+                          }
+                      );
+
+                    }
 
 
 

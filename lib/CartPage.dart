@@ -105,7 +105,9 @@ class _CartpageState extends State<Cartpage> {
                                             SizedBox(
                                               width: 5,
                                             ),
-                                            Text(data.docs[index]['dec'])
+                                            Container(
+                                                width: 200,
+                                                child: Text(data.docs[index]['dec'],overflow: TextOverflow.ellipsis,maxLines: 1,))
                                           ],
                                         ),
 
@@ -136,10 +138,6 @@ class _CartpageState extends State<Cartpage> {
                                   children: [
                                     TextButton(
                                         onPressed: ()async{
-
-                                          await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                                            await myTransaction.delete(data.docs[index].reference);
-                                          });
 
                                         },
                                         child: Text("Buy Now",style: TextStyle(color: Colors.green),)),

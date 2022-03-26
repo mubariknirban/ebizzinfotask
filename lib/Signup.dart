@@ -244,42 +244,59 @@ class _SignupState extends State<Signup> {
                   ),
                   onPressed: () async{
 
-                    setState(() {
-                      showSpinner = true;
-                    });
+                    if(username.text == "" || emailornumber.text == "" || userage.text =="" || userdob.text == "" || passwordedit.text == ""){
 
-                    FirebaseFirestore.instance
-                        .collection('Userdetails')
-                        .add({
-                      'Name': username.text,
-                      'age': userage.text,
-                      'dob': userdob.text,
-                      'email': emailornumber.text,},);
-
-
-                    try {
-                      final newUser = await _auth.createUserWithEmailAndPassword(
-                          email: emailornumber.text, password: passwordedit.text);
-                      if (newUser != null) {
-                        setState(() {
-                          showSpinner = false;
-                        });
-                        Navigator.pushNamed(context, 'login_screen');
-                      }
-                    } catch (e) {
-                      print(e);
-
-                      setState(() {
-                        showSpinner = false;
-                      });
 
                       final snackBar = SnackBar(
                         backgroundColor: Colors.red[900],
-                        content: Text(e.toString() + " !!!",style: TextStyle(color: Colors.yellowAccent),textAlign: TextAlign.center),
+                        content: Text("Please Enter All the Details" + " !!!",style: TextStyle(color: Colors.yellowAccent),textAlign: TextAlign.center),
                       );
 
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                    }else{
+
+
+                      setState(() {
+                        showSpinner = true;
+                      });
+
+                      FirebaseFirestore.instance
+                          .collection('Userdetails')
+                          .add({
+                        'Name': username.text,
+                        'age': userage.text,
+                        'dob': userdob.text,
+                        'email': emailornumber.text,},);
+
+
+                      try {
+                        final newUser = await _auth.createUserWithEmailAndPassword(
+                            email: emailornumber.text, password: passwordedit.text);
+                        if (newUser != null) {
+                          setState(() {
+                            showSpinner = false;
+                          });
+                          Navigator.pushNamed(context, 'login_screen');
+                        }
+                      } catch (e) {
+                        print(e);
+
+                        setState(() {
+                          showSpinner = false;
+                        });
+
+                        final snackBar = SnackBar(
+                          backgroundColor: Colors.red[900],
+                          content: Text(e.toString() + " !!!",style: TextStyle(color: Colors.yellowAccent),textAlign: TextAlign.center),
+                        );
+
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      }
+
+
                     }
+
 
 
                   },
