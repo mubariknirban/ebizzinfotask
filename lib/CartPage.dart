@@ -99,17 +99,7 @@ class _CartpageState extends State<Cartpage> {
                                           ],
                                         ),
                                         SizedBox(height: 5,),
-                                        Row(
-                                          children: [
-                                            Text("Description :- ",style: TextStyle(color: Colors.blue),),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Container(
-                                                width: 200,
-                                                child: Text(data.docs[index]['dec'],overflow: TextOverflow.ellipsis,maxLines: 1,))
-                                          ],
-                                        ),
+
 
                                       ],
                                     ),
@@ -126,6 +116,16 @@ class _CartpageState extends State<Cartpage> {
                                       ),
                                       child: Icon(Icons.add_shopping_cart),
                                     ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text("Description :- ",style: TextStyle(color: Colors.blue),),
+                                    SizedBox(
+                                      width: 5,
+                                    ),
+                                    Expanded(
+                                        child: Text(data.docs[index]['dec'],textAlign: TextAlign.justify,))
                                   ],
                                 ),
                                 Container(
