@@ -19,16 +19,6 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
 
 
-  _launchURL() async {
-    const url = 'https://play.google.com/store/apps/details?id=com.aasha.newaashaflutter';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
-
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
 
@@ -50,9 +40,6 @@ class _SignupState extends State<Signup> {
     super.initState();
     maind();
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
