@@ -101,7 +101,7 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 6,
               ),
               Container(
@@ -253,15 +253,11 @@ class _HomescreenState extends State<Homescreen> {
                     }
 
                     final data = snapshot.requireData;
-
-
-
                     return ListView.builder(
                         itemCount: data.size,
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,
                         itemBuilder: (context, index){
-
                           return Container(
                             height: 100,
                             child:Card(
