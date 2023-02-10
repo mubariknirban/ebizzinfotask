@@ -19,6 +19,7 @@ class _HomescreenState extends State<Homescreen> {
   late Timer timer;
   late Color _color;
 
+
   @override
   void initState() {
     // TODO: implement initState
@@ -30,6 +31,7 @@ class _HomescreenState extends State<Homescreen> {
   void changeclr(){
 
     final newColor = _color == Colors.white ? Secondarycolor: Colors.white;
+
     setState(() {
       _color = newColor;
     });
@@ -38,6 +40,7 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
+
         appBar: AppBar(
           title: Text("Home Page",style: TextStyle(color: Secondarycolor),),
           backgroundColor: Primarycolor,
@@ -73,6 +76,7 @@ class _HomescreenState extends State<Homescreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
+
               Container(
                 margin: EdgeInsets.all(10),
                 child: TextFormField(
