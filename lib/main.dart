@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         'Add_tocart': (context) => Cartpage(),
         'Userprofile':(context)=> Userdetails()
       },
+
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
