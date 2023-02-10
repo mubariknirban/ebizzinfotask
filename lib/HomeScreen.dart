@@ -244,13 +244,9 @@ class _HomescreenState extends State<Homescreen> {
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
 
                     if(snapshot.hasError){
-
                       return Text("Something Went Wrong");
-
                     }
-
                     if(snapshot.connectionState == ConnectionState.waiting){
-
                       return Center(
                         child: CircularProgressIndicator(),
                       );
