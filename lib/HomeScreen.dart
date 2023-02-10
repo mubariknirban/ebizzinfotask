@@ -76,7 +76,6 @@ class _HomescreenState extends State<Homescreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-
               Container(
                 margin: EdgeInsets.all(10),
                 child: TextFormField(
@@ -103,7 +102,7 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 6,
               ),
               Container(
                 color: Colors.black,
