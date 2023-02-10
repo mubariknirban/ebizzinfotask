@@ -236,13 +236,12 @@ class _HomescreenState extends State<Homescreen> {
               ),
               Container(
                 color: Colors.black,
-                height: 5,
+                height: 8,
               ),
               Container(
                 child: StreamBuilder<QuerySnapshot>(
                   stream: users,
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-
 
                     if(snapshot.hasError){
 
