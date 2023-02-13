@@ -138,13 +138,13 @@ class _HomescreenState extends State<Homescreen> {
                               child: Image.asset('assets/shirtsimg.png',fit: BoxFit.cover,),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5,
                           ),
                           Text("SHIRTS",style: TextStyle(fontWeight: FontWeight.bold),)
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Column(
