@@ -116,7 +116,7 @@ class _HomescreenState extends State<Homescreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
+                     const SizedBox(
                         width: 10,
                       ),
                       Column(
