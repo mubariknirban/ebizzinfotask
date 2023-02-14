@@ -76,7 +76,6 @@ class _HomescreenState extends State<Homescreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-
               Container(
                 margin: EdgeInsets.all(10),
                 child: TextFormField(
@@ -243,7 +242,6 @@ class _HomescreenState extends State<Homescreen> {
                 child: StreamBuilder<QuerySnapshot>(
                   stream: users,
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-
 
                     if(snapshot.hasError){
 
