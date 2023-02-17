@@ -251,6 +251,8 @@ class _HomescreenState extends State<Homescreen> {
                         child: CircularProgressIndicator(),
                       );
                     }
+
+
                     final data = snapshot.requireData;
 
                     return ListView.builder(
