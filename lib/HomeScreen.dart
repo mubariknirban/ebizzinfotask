@@ -76,7 +76,6 @@ class _HomescreenState extends State<Homescreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-
               Container(
                 margin: EdgeInsets.all(10),
                 child: TextFormField(
@@ -102,7 +101,7 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Container(
@@ -244,23 +243,18 @@ class _HomescreenState extends State<Homescreen> {
                   stream: users,
                   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
 
-
                     if(snapshot.hasError){
-
                       return Text("Something Went Wrong");
-
                     }
-
                     if(snapshot.connectionState == ConnectionState.waiting){
-
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
 
+
+
                     final data = snapshot.requireData;
-
-
 
                     return ListView.builder(
                         itemCount: data.size,
